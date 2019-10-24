@@ -9,7 +9,7 @@ var pp=[0,0,0,0,0,0,0,0,0,0,0,0,0];
 var y;
 var overall_pass=0,overall_fail=0,overall_pp=0,tot=0;
 
-function validate()
+function validate()                                            //To Check the validation of fields
 {
 	stud_id=parseInt(document.getElementById("stud-id").value);
 	y=document.getElementById("gr").value;
@@ -77,6 +77,7 @@ function validate()
 	calculate();
 	}
 }
+
 function calculate()
 {
 	alert("Marks Entered");
@@ -98,30 +99,36 @@ function calculate()
     }
 	pp[y]=(pass[y]/total[y])*100;
 	pp[y]=pp[y].toFixed(0);
-	if (confirm('Do you wish to continue?')) {
+	if (confirm('Do you wish to continue?')) 
+	{
 		// Save it!
-	} else {
+	} 
+	else 
+	{
 		display_array();	
 	}
 	cleartext();
-	}
-	function cleartext()
-	{
-		document.getElementById("mark1").value="";
-		document.getElementById("mark2").value="";
-		document.getElementById("mark3").value="";
-		document.getElementById("mark4").value="";
-		document.getElementById("gr").value ="0";
-		document.getElementById("div").value="0";
-		document.getElementById("stud-id").value="";
-	}
-	function valcleartext()
-	{
-		document.getElementById("mark1").value="";
-		document.getElementById("mark2").value="";
-		document.getElementById("mark3").value="";
-		document.getElementById("mark4").value="";
-	}
+}
+
+function cleartext()
+{
+	document.getElementById("mark1").value="";
+	document.getElementById("mark2").value="";
+	document.getElementById("mark3").value="";
+	document.getElementById("mark4").value="";
+	document.getElementById("gr").value ="0";
+	document.getElementById("div").value="0";
+	document.getElementById("stud-id").value="";
+}
+
+function valcleartext()
+{
+	document.getElementById("mark1").value="";
+	document.getElementById("mark2").value="";
+	document.getElementById("mark3").value="";
+	document.getElementById("mark4").value="";
+}
+
 function display_array()
 {   
     var u="<hr align=left width=50%>";
