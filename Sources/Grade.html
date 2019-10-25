@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset=utf-8 />
-    <title>Students Academic Report</title>
-    <link href="../Stylesheets/new.css" rel="stylesheet" type="text/css">
-    <script src="../Javascript/Grade.js"></script>
-</head>
-<body>
-        <h1>Bright Angels School---Students Aggregate Report Card</h1>
-<div class="Entities">
-    Student-Id<br><input type="number" id="stud-id" value="" placeholder="Enter Student-Id"></input><br><br>
-    Grade-&nbsp
-    <select name="Grade" id="gr"  onchange='assign()' value="0">
-            <option value="0">Select</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-    </select>
-    &nbsp &nbsp &nbsp &nbsp
-    
-    Division-&nbsp
-    <select name="division" id="div">
-            <option value="0">Select</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-    </select><br><br>
+        <head>
+                <meta charset=utf-8 />
+                <title>Students Academic Report</title>
+                <link href="../Stylesheets/new.css" rel="stylesheet" type="text/css">       
+        </head>
+        <body>
+                <h1>Bright Angels School---Students Aggregate Report Card</h1>
+                <div class="Entities">
+                        Student-Id<br><input type="number" id="stud-id" value="" placeholder="Enter Student-Id"></input><br><br>
+                        Grade-&nbsp
+                        <select name="Grade" id="grade"  onchange='assign()' value="0">
+                                <option value="0">Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                        </select>
+                        &nbsp &nbsp &nbsp &nbsp
+                        
+                        Division-&nbsp
+                        <select name="division" id="div">
+                                <option value="0">Select</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                        </select><br><br>
 
-    English<br><input type="number" id="mark1" value="" placeholder="Enter English Marks"></input><br><br>
-    Maths<br><input type="number" id="mark2" value="" placeholder="Enter Maths Marks"></input><br><br>
-    Science<br><input type="number" id="mark3" value="" placeholder="Enter Science Marks"></input><br><br>
-    Social Science<br><input type="number" id="mark4" value="" placeholder="Enter Social Marks"></input><br><br>
-    <button id="button" onclick="validate()">Submit</button><br><br>   
-    <button onclick="display_array()">Display</button>    
-</div>
-<div id="Result"></div>
-</body>
+                        English<br><input type="number" id="mark1" value="" placeholder="Enter English Marks"></input><br><br>
+                        Maths<br><input type="number" id="mark2" value="" placeholder="Enter Maths Marks"></input><br><br>
+                        Science<br><input type="number" id="mark3" value="" placeholder="Enter Science Marks"></input><br><br>
+                        Social Science<br><input type="number" id="mark4" value="" placeholder="Enter Social Marks"></input><br><br>
+                        <button id="button1" onclick="validate()">Submit</button><br><br>   
+                        <button id="button1" onclick="display_array()">Display</button>    
+                </div>
+        <div id="Result"></div>
+        <script src="../Javascript/Grade.js"></script>
+        </body>
 </html>
