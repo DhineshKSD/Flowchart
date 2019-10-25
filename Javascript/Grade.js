@@ -12,13 +12,13 @@ var overall_pass=0,overall_fail=0,overall_pp=0,tot=0;
 function validate()                                            //To Check the validation of fields
 {
 	stud_id=parseInt(document.getElementById("stud-id").value);
-	y=document.getElementById("gr").value;
+	y=document.getElementById("grade").value;
     eng=parseInt(document.getElementById("mark1").value);
     math=parseInt(document.getElementById("mark2").value);
     sci=parseInt(document.getElementById("mark3").value);
 	ss=parseInt(document.getElementById("mark4").value);
 
-	var g = document.getElementById("gr");
+	var g = document.getElementById("grade");
 	var strUser = g.options[g.selectedIndex].value;
 	var strUser1 = g.options[g.selectedIndex].text;
 
@@ -97,9 +97,9 @@ function calculate()
 		overall_fail++;
 		tot++;
     }
-	pp[y]=(pass[y]/total[y])*100;
+	pp[y]=(pass[y]/total[y])*100;                          //calculating pass percentage
 	pp[y]=pp[y].toFixed(0);
-	if (confirm('Do you wish to continue?')) 
+	if (confirm('Do you wish to continue?'))               //boolean method to get the user entry to continue/not?
 	{
 		// Save it!
 	} 
@@ -110,18 +110,18 @@ function calculate()
 	cleartext();
 }
 
-function cleartext()
+function cleartext()                                        //Separate function as a submodule to clear all field entries
 {
 	document.getElementById("mark1").value="";
 	document.getElementById("mark2").value="";
 	document.getElementById("mark3").value="";
 	document.getElementById("mark4").value="";
-	document.getElementById("gr").value ="0";
+	document.getElementById("grade").value ="0";
 	document.getElementById("div").value="0";
 	document.getElementById("stud-id").value="";
 }
 
-function valcleartext()
+function valcleartext()                                     //Separate function as a submodule to clear mark fields alone
 {
 	document.getElementById("mark1").value="";
 	document.getElementById("mark2").value="";
