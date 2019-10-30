@@ -17,11 +17,6 @@ h1
     font-family: 'Merienda', cursive;
     color: whitesmoke;
 }
-#Result
-{ 
-    margin-top:20%;
-    margin-left: 30%; 
-}
 .Entities
 {
     width: 50%;
@@ -37,7 +32,7 @@ h1
     text-align: center;
     font-family: 'Merienda', cursive;
 }
-#button1
+#Button1
 {
  color: whitesmoke;
  background-color: rgb(13, 68, 119);
@@ -46,8 +41,13 @@ h1
  height: 30px;
  border-radius: 1em;
 }
-#button1:hover
+#Button1:hover
 {
 background-color: rgb(206, 218, 47);
 color: black;
+}
+#Result
+{ 
+    margin-top:20%;
+    margin-left: 30%; 
 }
