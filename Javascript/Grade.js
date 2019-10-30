@@ -1,36 +1,36 @@
-var eng=0,math=0,sci=0,ss=0;
-var stud_id=0 ;
+var Eng=0,Maths=0,Sci=0,Social=0;
+var StudentId=0 ;
 var i=0;
-var grade=[0,1,2,3,4,5,6,7,8,9,10,11,12];
-var pass=[0,0,0,0,0,0,0,0,0,0,0,0,0];
-var fail=[0,0,0,0,0,0,0,0,0,0,0,0,0];
-var total=[0,0,0,0,0,0,0,0,0,0,0,0,0];
-var pp=[0,0,0,0,0,0,0,0,0,0,0,0,0];
+var Grade=[0,1,2,3,4,5,6,7,8,9,10,11,12];
+var Pass=[0,0,0,0,0,0,0,0,0,0,0,0,0];
+var Fail=[0,0,0,0,0,0,0,0,0,0,0,0,0];
+var Total=[0,0,0,0,0,0,0,0,0,0,0,0,0];
+var PassPercentage=[0,0,0,0,0,0,0,0,0,0,0,0,0];
 var y;
-var overall_pass=0,overall_fail=0,overall_pp=0,tot=0;
+var OverallPass=0,OverallFail=0,OverallPassPercentage=0,Tot=0;
 
-function validate()                                            //To Check the validation of fields
+function Validate()                                            //To Check the validation of fields
 {
-	stud_id=parseInt(document.getElementById("stud-id").value);
-	y=document.getElementById("grade").value;
-    eng=parseInt(document.getElementById("mark1").value);
-    math=parseInt(document.getElementById("mark2").value);
-    sci=parseInt(document.getElementById("mark3").value);
-	ss=parseInt(document.getElementById("mark4").value);
+	StudentId=parseInt(document.getElementById("StudentId").value);
+	y=document.getElementById("Grade").value;
+    Eng=parseInt(document.getElementById("Mark1").value);
+    Maths=parseInt(document.getElementById("Mark2").value);
+    Sci=parseInt(document.getElementById("Mark3").value);
+	Social=parseInt(document.getElementById("Mark4").value);
 
-	var g = document.getElementById("grade");
+	var g = document.getElementById("Grade");
 	var strUser = g.options[g.selectedIndex].value;
 	var strUser1 = g.options[g.selectedIndex].text;
 
-	var h = document.getElementById("div");
+	var h = document.getElementById("Div");
 	var strUser2 = h.options[h.selectedIndex].value;
 	var strUser3 = h.options[h.selectedIndex].text;
  
-	if(isNaN(stud_id))
+	if(isNaN(StudentId))
 	{
 	alert("Please enter a student id");
 	}
-	else if(stud_id<0||stud_id>1440)
+	else if(StudentId<0||StudentId>1440)
 	{
 	alert("Please enter a valid student id")
 	}
@@ -42,94 +42,94 @@ function validate()                                            //To Check the va
 	{
 	alert("Please select a Division");
 	}
-	else if(isNaN(eng))
+	else if(isNaN(Eng))
     {
 	alert("Please enter English Marks");
 	return false;
 	}
-	else if(isNaN(math))
+	else if(isNaN(Maths))
     {
 	alert("Please enter Maths Marks");
 	return false;
 	}
-	else if(isNaN(sci))
+	else if(isNaN(Sci))
     {
 	alert("Please enter Science Marks");
 	return false;
 	}
-	else if(isNaN(ss))
+	else if(isNaN(Social))
     {
 	alert("Please enter Social-Science Marks");
 	return false;
     }
-	else if(eng<0 || math<0 || sci<0 || ss<0)
+	else if(Eng<0 || Maths<0 || Sci<0 || Social<0)
 	{
 	alert("Marks can't be negative");
 	return false;
-    valcleartext();
+    ValClearText();
 	}
-	else if(eng>100 || math>100 || sci>100 || ss>100)
+	else if(Eng>100 || Maths>100 || Sci>100 || Social>100)
 	{
 	alert("Marks can't be greater than 100");
-    valcleartext();
+    ValClearText();
 	}
 	else{
-	calculate();
+	Calculate();
 	}
 }
 
-function calculate()
+function Calculate()
 {
 	alert("Marks Entered");
-    var sum=eng+math+sci+ss;
-    var average=(sum/4);
-    if (average>=60)
+    var Sum=Eng+Maths+Sci+Social;
+    var Average=(Sum/4);
+    if (Average>=60)
     {
-        pass[y]++;
-		total[y]++;
-		overall_pass++;
-		tot++;
+        Pass[y]++;
+		Total[y]++;
+		OverallPass++;
+		Tot++;
     }
     else
     {
-        fail[y]++;
-		total[y]++;
-		overall_fail++;
-		tot++;
+        Fail[y]++;
+		Total[y]++;
+		OverallFail++;
+		Tot++;
     }
-	pp[y]=(pass[y]/total[y])*100;                          //calculating pass percentage
-	pp[y]=pp[y].toFixed(0);
+	PassPercentage[y]=(Pass[y]/Total[y])*100;              //calculating pass percentage
+	PassPercentage[y]=PassPercentage[y].toFixed(0);
 	if (confirm('Do you wish to continue?'))               //boolean method to get the user entry to continue/not?
 	{
 		// Save it!
 	} 
 	else 
 	{
-		display_array();	
+		DisplayArray();	
 	}
-	cleartext();
+	ClearText();
 }
 
-function cleartext()                                        //Separate function as a submodule to clear all field entries
+function ClearText()                                        //Separate function as a submodule to clear all field entries
 {
-	document.getElementById("mark1").value="";
-	document.getElementById("mark2").value="";
-	document.getElementById("mark3").value="";
-	document.getElementById("mark4").value="";
-	document.getElementById("grade").value ="0";
-	document.getElementById("div").value="0";
-	document.getElementById("stud-id").value="";
+	document.getElementById("Mark1").value="";
+	document.getElementById("Mark2").value="";
+	document.getElementById("Mark3").value="";
+	document.getElementById("Mark4").value="";
+	document.getElementById("Grade").value ="0";
+	document.getElementById("Div").value="0";
+	document.getElementById("StudentId").value="";
 }
 
-function valcleartext()                                     //Separate function as a submodule to clear mark fields alone
+function ValClearText()                                     //Separate function as a submodule to clear mark fields alone
 {
-	document.getElementById("mark1").value="";
-	document.getElementById("mark2").value="";
-	document.getElementById("mark3").value="";
-	document.getElementById("mark4").value="";
+	document.getElementById("Mark1").value="";
+	document.getElementById("Mark2").value="";
+	document.getElementById("Mark3").value="";
+	document.getElementById("Mark4").value="";
 }
 
-function display_array()
+function DisplayArray()
 {   
     var u="<hr align=left width=50%>";
     var d="<pre>";
@@ -139,25 +139,25 @@ function display_array()
 	var m="<br>";
 	for(i=1;i<10;i++)
 	{
-    var l="  "+grade[i]+"            "+total[i]+"               "+pass[i]+"             "+fail[i]+"           "+pp[i];
+    var l="  "+Grade[i]+"            "+Total[i]+"               "+Pass[i]+"             "+Fail[i]+"           "+PassPercentage[i];
 	o+=l;
 	o+=m;
 	}
 	for(i=10;i<13;i++)
 	{
-    var l="  "+grade[i]+"           "+total[i]+"               "+pass[i]+"             "+fail[i]+"           "+pp[i];
+    var l="  "+Grade[i]+"           "+Total[i]+"               "+Pass[i]+"             "+Fail[i]+"           "+PassPercentage[i];
 	o+=l;
 	o+=m;
 	}
-	if(tot!=0)
+	if(Tot!=0)
 	{
-		var overall_pp=(overall_pass/tot)*100;
+		var OverallPassPercentage=(OverallPass/Tot)*100;
 	}
 	else{
-		overall_pp=0;
+		OverallPassPercentage=0;
 	}
-	overall_pp=overall_pp.toFixed(0);
-	var t=" "+"All"+"           "+tot+"               "+overall_pass+"             "+overall_fail+"           "+overall_pp;
+	OverallPassPercentage=OverallPassPercentage.toFixed(0);
+	var t=" "+"All"+"           "+Tot+"               "+OverallPass+"             "+OverallFail+"           "+OverallPassPercentage;
     document.getElementById("Result").innerHTML=d+u+s+u+o+u+t+u+f;
 }
 
