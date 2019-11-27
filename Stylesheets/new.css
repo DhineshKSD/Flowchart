@@ -12,7 +12,7 @@ body
 }
 h1
 {
-    margin-top:30px;
+    margin-top:10px;
     text-align: center;
     font-family: 'Merienda', cursive;
     color: whitesmoke;
@@ -24,7 +24,7 @@ h1
     max-width: 50em;
     background-color: rgba(188, 194, 197, 0.4);
     position: relative;
-    top: 0.5em;
+    top: 0.1em;
     left: 22%;
     padding: 2em;
     border-radius: 3.5em 0 3.5em 0;
@@ -48,6 +48,7 @@ color: black;
 }
 #Result
 { 
-    margin-top:20%;
-    margin-left: 30%; 
+    margin-top:25%;
+    margin-left: 31%;
+    margin-bottom:15%; 
 }
